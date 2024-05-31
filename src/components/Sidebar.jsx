@@ -1,7 +1,7 @@
 import { PaintBucket, PencilRuler, Wrench } from "lucide-react";
 import React, { useState } from "react";
 
-const Sidebar = () => {
+const Sidebar = ({ handleOnChangeBtn }) => {
   const buttons = [
     {
       id: 1,
@@ -13,11 +13,11 @@ const Sidebar = () => {
       title: "Background",
       icon: PaintBucket,
     },
-    {
-      id: 3,
-      title: "Upgrade",
-      icon: Wrench,
-    },
+    // {
+    //   id: 3,
+    //   title: "Upgrade",
+    //   icon: Wrench,
+    // },
   ];
 
   const [activeBtnIndex, setActiveBtnIndex] = useState(0);
@@ -35,7 +35,10 @@ const Sidebar = () => {
                   : "bg-transparent text-blue-500"
               }`}
           key={btn.id}
-          onClick={() => setActiveBtnIndex(index)}
+          onClick={() => {
+            setActiveBtnIndex(index);
+            handleOnChangeBtn(index);
+          }}
         >
           <btn.icon className="size-5" />
           {btn.title}
