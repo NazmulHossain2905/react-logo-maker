@@ -28,7 +28,7 @@ const Sidebar = () => {
         <button
           className={`flex items-center justify-start gap-4
            rounded-md border p-4 px-5 font-semibold transition-colors
-          hover:bg-blue-400 hover:text-white
+          hover:bg-blue-500 hover:text-white
               ${
                 activeBtnIndex === index
                   ? "bg-blue-500 text-white"
