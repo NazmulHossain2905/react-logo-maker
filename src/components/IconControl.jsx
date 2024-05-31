@@ -2,6 +2,7 @@ import { Smile } from "lucide-react";
 import React from "react";
 import Slider from "./Slider";
 import MovementControl from "./MovementControl";
+import CustomColorPicker from "./CustomColorPicker";
 
 const IconControl = () => {
   return (
@@ -40,6 +41,10 @@ const IconControl = () => {
           <div className="mt-3 flex items-center justify-center">
             <MovementControl />
           </div>
+        </div>
+        <div>
+          <label className="mb-3 block font-medium">Icon Color</label>
+          <CustomColorPicker hideControls />
         </div>
       </div>
     </>

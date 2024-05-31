@@ -22,6 +22,11 @@
   .range-slider::-moz-range-thumb:hover {
     @apply bg-blue-600;
   }
+
+  /* Body size without navbar */
+  .body-height {
+    height: calc(100vh - 72px);
+  }
 }
 
 ::-webkit-scrollbar {

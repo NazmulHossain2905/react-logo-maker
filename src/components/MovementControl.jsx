@@ -62,39 +62,39 @@ const MovementControl = () => {
       <button
         onClick={handleTop}
         title="Up"
-        className="flex size-9 items-center justify-center border bg-gray-500 font-semibold text-white"
+        className="group flex size-9 items-center justify-center border bg-gray-500 font-semibold text-white hover:bg-gray-600"
       >
-        <ChevronUp />
+        <ChevronUp className="transition group-hover:-translate-y-1" />
       </button>
       <div className="flex">
         <button
           title="Left"
           onClick={handleLeft}
-          className="flex size-9 items-center justify-center border bg-gray-500 font-semibold text-white"
+          className="group flex size-9 items-center justify-center border bg-gray-500 font-semibold text-white hover:bg-gray-600"
         >
-          <ChevronLeft />
+          <ChevronLeft className="transition group-hover:-translate-x-1" />
         </button>
         <button
           title="Center"
           onClick={handleCenter}
-          className="flex size-9 items-center justify-center border bg-gray-500 font-semibold text-white"
+          className="group flex size-9 items-center justify-center border bg-gray-500 font-semibold text-white hover:bg-gray-600"
         >
-          <Dot />
+          <Dot className="transition group-hover:scale-125" />
         </button>
         <button
           title="Right"
           onClick={handleRight}
-          className="flex size-9 items-center justify-center border bg-gray-500 font-semibold text-white"
+          className="group flex size-9 items-center justify-center border bg-gray-500 font-semibold text-white hover:bg-gray-600"
         >
-          <ChevronRight />
+          <ChevronRight className="transition group-hover:translate-x-1" />
         </button>
       </div>
       <button
         title="Down"
         onClick={handleBottom}
-        className="flex size-9 items-center justify-center border bg-gray-500 font-semibold text-white"
+        className="group flex size-9 items-center justify-center border bg-gray-500 font-semibold text-white hover:bg-gray-600"
       >
-        <ChevronDown />
+        <ChevronDown className="transition group-hover:translate-y-1" />
       </button>
     </div>
   );

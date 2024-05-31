@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex items-center justify-between bg-slate-200 p-5 py-4 shadow-md">
+    <div className="flex h-[72px] items-center justify-between bg-slate-200 p-5 py-4 shadow-md">
       <div
         onClick={handleLogoClick}
         className="flex cursor-pointer items-center justify-center gap-3"
