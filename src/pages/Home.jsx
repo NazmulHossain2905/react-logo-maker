@@ -9,7 +9,7 @@ const Home = () => {
       <div className="col-span-1">
         <Sidebar />
       </div>
-      <div className="col-span-1 border-x-2">
+      <div className="col-span-1 overflow-auto border-x-2">
         <Controls />
       </div>
       <div className="md:col-span-2">

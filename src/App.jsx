@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import PageNotFound from "./pages/PageNotFound";
+import Movement from "./components/Movement";
 
 const App = () => {
   return (

@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .range-slider {
+    @apply h-1.5 w-full appearance-none rounded-full bg-blue-300;
+  }
+
+  .range-slider::-webkit-slider-thumb {
+    @apply aspect-square w-5 cursor-pointer appearance-none rounded-md bg-blue-500 transition duration-200 ease-out;
+  }
+
+  .range-slider::-webkit-slider-thumb:hover {
+    @apply bg-blue-600;
+  }
+
+  .range-slider::-moz-range-thumb {
+    @apply aspect-square w-5 cursor-pointer appearance-none bg-blue-500 transition duration-200 ease-out;
+  }
+
+  .range-slider::-moz-range-thumb:hover {
+    @apply bg-blue-600;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
