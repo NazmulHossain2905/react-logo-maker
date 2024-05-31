@@ -1,10 +1,14 @@
 import React from "react";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 
 const App = () => {
-  return;
-  <div class="ml-4 flex h-24 border-2 border-gray-300 p-3 text-gray-700 shadow-md">
-    <h1>Hello World</h1>
-  </div>;
+  return (
+    <div>
+      <Navbar />
+      <Home />
+    </div>
+  );
 };
 
 export default App;
