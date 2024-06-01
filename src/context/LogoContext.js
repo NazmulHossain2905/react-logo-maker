@@ -11,7 +11,7 @@ export const LogoContext = createContext({
   },
   background: {
     rounded: 50,
-    padding: 50,
+    padding: 16,
     background: "#f0f",
   },
 

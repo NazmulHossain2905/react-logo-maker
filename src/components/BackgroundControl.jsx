@@ -1,28 +1,40 @@
-import { Smile } from "lucide-react";
 import React from "react";
 import Slider from "./Slider";
-import MovementControl from "./MovementControl";
 import CustomColorPicker from "./CustomColorPicker";
+import { useLogoContext } from "../context/LogoContext";
 
 const BackgroundControl = () => {
+  const { background, setBackgroundStyle } = useLogoContext();
+
   return (
     <div className="mt-1 flex flex-col gap-5">
       <Slider
         label="Rounded"
-        max={150}
+        max={256}
         name="rounded"
-        onChange={(rounded) => console.log(rounded)}
+        defaultValue={background.rounded}
+        onChange={(rounded) =>
+          setBackgroundStyle((prev) => ({ ...prev, rounded }))
+        }
       />
       <Slider
         label="Padding"
         max={360}
         name="padding"
-        onChange={(padding) => console.log(padding)}
+        defaultValue={background.padding}
+        onChange={(padding) =>
+          setBackgroundStyle((prev) => ({ ...prev, padding }))
+        }
       />
 
       <div>
         <label className="mb-3 block font-medium">Background Color</label>
-        <CustomColorPicker />
+        <CustomColorPicker
+          defaultColor={background.background}
+          colorOnChange={(color) =>
+            setBackgroundStyle((prev) => ({ ...prev, background: color }))
+          }
+        />
       </div>
     </div>
   );
