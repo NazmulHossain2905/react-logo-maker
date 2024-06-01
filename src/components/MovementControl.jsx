@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ChevronDown,
   ChevronLeft,
@@ -6,11 +6,15 @@ import {
   ChevronUp,
   Dot,
 } from "lucide-react";
+import { useLogoContext } from "../context/LogoContext";
 
-const MovementControl = () => {
+const MovementControl = ({ onChangeIconPosition = () => {} }) => {
+  const { icon } = useLogoContext();
+
   const [top, setTop] = useState(-50);
   const [left, setLeft] = useState(-50);
-  const [movementStep, setMovementStep] = useState(40);
+
+  const movementStep = Number(icon.movementStep);
 
   const handleTop = () => {
     setTop((prev) =>
@@ -56,6 +60,10 @@ const MovementControl = () => {
     setTop(-50);
     setLeft(-50);
   };
+
+  useEffect(() => {
+    onChangeIconPosition({ top, left });
+  }, [top, left]);
 
   return (
     <div className="flex size-28 flex-col items-center justify-center">

@@ -7,7 +7,7 @@ import {
   Dot,
 } from "lucide-react";
 
-function Movement() {
+function MovementTest() {
   const [top, setTop] = useState(-50);
   const [left, setLeft] = useState(-50);
   const [movementStep, setMovementStep] = useState(40);
@@ -111,4 +111,4 @@ function Movement() {
   );
 }
 
-export default Movement;
+export default MovementTest;

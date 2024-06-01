@@ -19,7 +19,7 @@ const BackgroundControl = () => {
       />
       <Slider
         label="Padding"
-        max={360}
+        max={224}
         name="padding"
         defaultValue={background.padding}
         onChange={(padding) =>
