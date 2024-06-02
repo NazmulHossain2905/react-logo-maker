@@ -1,4 +1,4 @@
-import { PaintBucket, PencilRuler, Wrench } from "lucide-react";
+import { BoxSelect, PaintBucket, PencilRuler, Wrench } from "lucide-react";
 import React, { useState } from "react";
 
 const Sidebar = ({ handleOnChangeBtn }) => {
@@ -13,8 +13,13 @@ const Sidebar = ({ handleOnChangeBtn }) => {
       title: "Background",
       icon: PaintBucket,
     },
+    {
+      id: 3,
+      title: "Border",
+      icon: BoxSelect,
+    },
     // {
-    //   id: 3,
+    //   id: 4,
     //   title: "Upgrade",
     //   icon: Wrench,
     // },

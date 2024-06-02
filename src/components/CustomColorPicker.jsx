@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import ColorPicker from "react-best-gradient-color-picker";
 
 const CustomColorPicker = ({
@@ -6,15 +5,12 @@ const CustomColorPicker = ({
   colorOnChange = () => {},
   hideControls = false,
 }) => {
-  const [color, setColor] = useState(defaultColor);
-
   return (
     <ColorPicker
       hideControls={hideControls}
       hidePresets={true}
-      value={color}
+      value={defaultColor}
       onChange={(color) => {
-        setColor(color);
         colorOnChange(color);
       }}
     />

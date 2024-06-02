@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 const Slider = ({
   name,
   label,
@@ -9,7 +7,6 @@ const Slider = ({
   defaultValue = 0,
   onChange = () => {},
 }) => {
-  const [value, setValue] = useState(defaultValue);
   return (
     <div>
       <div className="flex items-center justify-between">
@@ -17,7 +14,7 @@ const Slider = ({
           {label}
         </label>
 
-        <span>{`${value}${unit}`}</span>
+        <span>{`${defaultValue}${unit}`}</span>
       </div>
       <input
         className="range-slider"
@@ -26,9 +23,8 @@ const Slider = ({
         id={name}
         min={min}
         max={max}
-        value={value}
+        value={defaultValue}
         onChange={(e) => {
-          setValue(e.target.value);
           onChange(e.target.value);
         }}
       />
