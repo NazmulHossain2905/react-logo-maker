@@ -24,6 +24,7 @@ const LogoPreview = () => {
         className="flex size-[512px] items-center justify-center border-2 border-dashed border-gray-300"
       >
         <div
+          id="downloadLogo"
           style={{
             borderRadius: `${background.rounded}px`,
             background: background.background,

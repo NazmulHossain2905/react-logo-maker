@@ -1,13 +1,31 @@
 import React from "react";
-import logo from "../assets/images/logo.jfif";
 import { ArrowDownToLine } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import html2canvas from "html2canvas";
+import logo from "../assets/images/logo.jfif";
 
 const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
     navigate("/");
+  };
+
+  const handleDownloadLogo = () => {
+    const logoElement = document.getElementById("downloadLogo");
+    html2canvas(logoElement, {
+      backgroundColor: "transparent",
+    })
+      .then((canvas) => {
+        const url = canvas.toDataURL("image/png");
+        const date = new Date();
+        const imgName = `LogoMaker_${date.toDateString().split(" ").join("_")}__${date.toLocaleTimeString().replaceAll(":", "_").split(" ").join("_")}.png`;
+        const anchorTag = document.createElement("a");
+        anchorTag.href = url;
+        anchorTag.download = imgName;
+        anchorTag.click();
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -48,7 +66,10 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <button className="flex items-center gap-2 rounded-lg bg-blue-600 p-2 px-4 font-semibold text-white transition-colors hover:bg-blue-500">
+        <button
+          onClick={handleDownloadLogo}
+          className="flex items-center gap-2 rounded-lg bg-blue-600 p-2 px-4 font-semibold text-white transition-colors hover:bg-blue-500"
+        >
           <ArrowDownToLine className="size-5" /> Download
         </button>
       </nav>
