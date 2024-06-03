@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowDownToLine } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas";
@@ -28,6 +28,16 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
 
+  const [activeTab, setActiveTab] = useState("home");
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setActiveTab("home");
+    } else {
+      setActiveTab(location.pathname.replace("/", ""));
+    }
+  }, []);
+
   return (
     <div className="flex h-[72px] items-center justify-between bg-slate-200 p-5 py-4 shadow-md">
       <div
@@ -42,7 +52,8 @@ const Navbar = () => {
         <ul className="hidden items-center gap-5 md:flex">
           <li>
             <Link
-              className="font-medium text-gray-600 transition-colors hover:text-gray-800"
+              onClick={() => setActiveTab("home")}
+              className={`font-medium transition-colors hover:text-blue-500 ${activeTab === "home" ? "text-blue-500" : " text-gray-600"}`}
               to="/"
             >
               Home
@@ -50,20 +61,21 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              className="font-medium text-gray-600 transition-colors hover:text-gray-800"
+              onClick={() => setActiveTab("about")}
+              className={`font-medium transition-colors hover:text-blue-500 ${activeTab === "about" ? "text-blue-500" : " text-gray-600"}`}
               to="/about"
             >
               About
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               className="font-medium text-gray-600 transition-colors hover:text-gray-800"
               to="/contact"
             >
               Contact
             </Link>
-          </li>
+          </li> */}
         </ul>
 
         <button
